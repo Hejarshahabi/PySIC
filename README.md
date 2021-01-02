@@ -18,7 +18,7 @@ set is divided in two sets for model assessment and model validation.
 The ration of the division is set by user. **PySIC** gets features ( can
 be a stack of satellite images, NDVI index, Slope layer and..) and
 labels as **.tif** files as inputs and its output is a classification map
-with .tifù format. In this package, before applying classification, some
+with .tif¬ù format. In this package, before applying classification, some
 pre-processing steps including data scaling, standardizing and balancing
 are taken to reduce the inconsistency and imbalance among features and
 classes, respectively. The package is built on the libraries such as
@@ -37,7 +37,7 @@ support.
 
  The version of **GDAL** should matches your python version,using the following [link](https://www.lfd.uci.edu/~gohlke/pythonlibs/) you can download **GDAL** file that matches your python version.  
 To install **GDAL** manually follow these steps: First download it in your local drive, then in your terminal environment type this code:  
-pip install C:\......\GDAL3.x.xëcpxëcpxëwin_amd64.whl.
+pip install C:\......\GDAL3.x.x‚Äòcpx‚Äòcpx‚Äòwin_amd64.whl.
 
 # A Guide on how to use this package
 
@@ -49,7 +49,7 @@ pip install C:\......\GDAL3.x.xëcpxëcpxëwin_amd64.whl.
 
     from PySIC import Data
 
-*The first and second arguments are features, and label raster, respectively. It returns information on data bands, rows and columns and then convert them to a 2D matrices. Each column in new training dataset represents an image or feature band, and each row shows a pixel*
+*The first and second arguments are features, and label raster, respectively.Invenotry or label values should start from 1 not zero, so make sure that 0 is not associated with any classes in inventory layer. It returns information on data bands, rows and columns and then convert them to a 2D matrices. Each column in new training dataset represents an image or feature band, and each row shows a pixel*
 
     instance=Data.InputData(data,inventory)
 
