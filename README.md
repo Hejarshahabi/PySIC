@@ -34,6 +34,7 @@ support.
  3. **Scikit-Learn**
  4. **Imbalanced-learn**
  5. **GDAL**
+ 5. **Matplotlib**
 
  The version of **GDAL** should matches your python version,using the following [link](https://www.lfd.uci.edu/~gohlke/pythonlibs/) you can download **GDAL** file that matches your python version.  
 To install **GDAL** manually follow these steps: First download it in your local drive, then in your terminal environment type this code:  
