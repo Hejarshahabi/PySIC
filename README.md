@@ -50,7 +50,7 @@ pip install C:\......\GDAL3.x.x‘cpx‘cpx‘win_amd64.whl.
 
     from PySIC import Data
 
-*The first and second arguments are raster layers of features and label, respectively. Invenotry or label values must start from **1** not zero or any negative vlaues, so make sure that **vlaues less than 1** are not associated with any classes in inventory layer. It returns information on data bands, rows and columns and then convert them to a 2D matrices. Each column in new training dataset represents an image or feature band, and each row shows a pixel*
+*The first and second arguments are raster layers of features and label, respectively. Invenotry or label values must start from **1** not zero or any negative vlaues, so make sure that **values less than 1** are not associated with any classes in inventory layer. It returns information on data bands, rows and columns and then convert them to a 2D matrices. Each column in new training dataset represents an image or feature band, and each row shows a pixel*
 
     instance=Data.InputData(data,inventory)
 
