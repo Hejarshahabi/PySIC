@@ -57,7 +57,7 @@ To access your input features and labels in from of arrays
    
 
      InputFeatures = instance.data
-        InputLabels= instance.inv
+       InputLabels = instance.inv
 
 *with this code you can get reshaped training features and labels*
 
