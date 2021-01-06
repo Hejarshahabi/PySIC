@@ -1,3 +1,4 @@
+
 # PySIC
 **PySIC** stands for Python Satellite Imagery Classifier is a powerful
 and easy to implement package for satellite image classification using
@@ -18,10 +19,10 @@ set is divided in two sets for model assessment and model validation.
 The ration of the division is set by user. **PySIC** gets features ( can
 be a stack of satellite images, NDVI index, Slope layer and..) and
 labels as **.tif** files as inputs and its output is a classification map
-with .tif format. In this package, before applying classification, some
+with .tif‌ format. In this package, before applying classification, some
 pre-processing steps including data scaling, standardizing and balancing
 are taken to reduce the inconsistency and imbalance among features and
-classes, respectively. The package is built on the libraries such as
+classes, respectively. The module is built on the libraries such as
 **Numpy**, **Pandas**, **Matplotlib**, **Scikit-Learn**, **imbalanced-learn**, and **GDAL**,
 therefore installing these libraries are required. 
 Please do not use this package for commercial purpose without my explicit permission.
@@ -34,7 +35,6 @@ support.
  3. **Scikit-Learn**
  4. **Imbalanced-learn**
  5. **GDAL**
- 5. **Matplotlib**
 
  The version of **GDAL** should matches your python version,using the following [link](https://www.lfd.uci.edu/~gohlke/pythonlibs/) you can download **GDAL** file that matches your python version.  
 To install **GDAL** manually follow these steps: First download it in your local drive, then in your terminal environment type this code:  
@@ -50,9 +50,14 @@ pip install C:\......\GDAL3.x.x‘cpx‘cpx‘win_amd64.whl.
 
     from PySIC import Data
 
-*The first and second arguments are raster layers of features and label, respectively. Invenotry or label values must start from **1** not zero or any negative vlaues, so make sure that **values less than 1** are not associated with any classes in inventory layer. It returns information on data bands, rows and columns and then convert them to a 2D matrices. Each column in new training dataset represents an image or feature band, and each row shows a pixel*
+*The first and second arguments are features, and label raster, respectively. It returns information on data bands, rows and columns and then convert them to a 2D matrices. Each column in new training dataset represents an image or feature band, and each row shows a pixel*
 
     instance=Data.InputData(data,inventory)
+To access your input features and labels in from of arrays
+   
+
+     InputFeatures = instance.data
+        InputLabels= instance.inv
 
 *with this code you can get reshaped training features and labels*
 
@@ -95,9 +100,9 @@ you put nothing it uses the default method which is MinMax method.*
 
     data.get_balanced_samples()
 
-*The following code shows the balanced samples based on the method you applied previously.*  
+*Using the following code scaled and balanced training data can be returend.*  
 
-    data.get_balanced_samples()
+    X, Y = data.get_balanced_data()
 
 *This code plots balanced features and labels.*  
 
@@ -193,6 +198,8 @@ with this code you should introduce your meta classifier and number for cross va
 takes the a name for the map and stores in the current directory.*  
 
     stacking.ExprotMap("prediction.tif")
+
+
 
 
 
