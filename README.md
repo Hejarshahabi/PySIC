@@ -1,4 +1,5 @@
 
+
 # PySIC
 **PySIC** stands for Python Satellite Imagery Classifier is a powerful
 and easy to implement package for satellite image classification using
@@ -57,7 +58,7 @@ To access your input features and labels in from of arrays
    
 
      InputFeatures = instance.data
-       InputLabels = instance.inv
+        InputLabels= instance.inv
 
 *with this code you can get reshaped training features and labels*
 
@@ -115,6 +116,7 @@ First method is using single classifier and second method is stacking mutiple cl
 *Inputs are **X** and **Y** that we got from last code.  
 the third argument (**0.3**) is the ratio between training data and validation data*  
 
+    from PySIC import Training
     single=Training.Single_Classifier(X,Y,0.3)
 
 *Here you have to introduce your own model wit its parameters for example:*
@@ -143,7 +145,14 @@ the third argument (**0.3**) is the ratio between training data and validation d
 *In order to apply the train model on your new data set you can use this code it takes to input frist is your image or features and the second one is the scaling method that was used to scale the training data. 
 
     single.Prediction("test2.tif", "minmax")
+    
+*This code plot the map*
 
+    single.PlotMap()
+*To save the classification map in tif format following code can be use.
+takes the a name for the map and stores in the current directory.*  
+
+    single.ExprotMap("prediction.tif")
  ## Stacking Classifier
 
     from PySIC import Training
@@ -197,7 +206,8 @@ with this code you should introduce your meta classifier and number for cross va
 *To save the classification map in tif format following code can be use.
 takes the a name for the map and stores in the current directory.*  
 
-    stacking.ExprotMap("prediction.tif")
+    stacking.ExportMap("prediction.tif")
+
 
 
 
